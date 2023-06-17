@@ -1,0 +1,1 @@
+document.onkeydown=function(e){if(13==e.keyCode){let e=document.getElementById("input").value;document.body.style.backgroundColor=e}};

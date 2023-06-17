@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Calculator</title>
+ <link rel="stylesheet" href="style.css">
+ <link
+      rel="shortcut icon"
+      href="../../Logos/logo_small_icon_only.png"
+      type="icon/png"
+    />
+</head>
+<body>
+ <section class="calculator">
+  <form>
+   <input type="text" name="" id="result" class="screen">
+  </form>
+  <div class="buttons">
+   <button type="button" class="btn btn-yellow" id="*" onclick="forOperator(this.id)">*</button>
+   <button type="button" class="btn btn-yellow" id="/" onclick="forOperator(this.id)">/</button>
+   <button type="button" class="btn btn-yellow" id="-" onclick="forOperator(this.id)">-</button>
+   <button type="button" class="btn btn-yellow" id="+" onclick="forOperator(this.id)">+</button>
+   <button type="button" class="btn btn-grey" id="." onclick="forNumber(this.id)">.</button>
+   <button type="button" class="btn btn-grey" id="9" onclick="forNumber(this.id)">9</button>
+   <button type="button" class="btn btn-grey" id="8" onclick="forNumber(this.id)">8</button>
+   <button type="button" class="btn btn-grey" id="7" onclick="forNumber(this.id)">7</button>
+   <button type="button" class="btn btn-grey" id="6" onclick="forNumber(this.id)">6</button>
+   <button type="button" class="btn btn-grey" id="5" onclick="forNumber(this.id)">5</button>
+   <button type="button" class="btn btn-grey" id="4" onclick="forNumber(this.id)">4</button>
+   <button type="button" class="btn btn-grey" id="3" onclick="forNumber(this.id)">3</button>
+   <button type="button" class="btn btn-grey" id="2" onclick="forNumber(this.id)">2</button>
+   <button type="button" class="btn btn-grey" id="1" onclick="forNumber(this.id)">1</button>
+   <button type="button" class="btn btn-grey" id="0" onclick="forNumber(this.id)">0</button>
+   <button type="button" class="btn-equal btn-grey" onclick="forEqual()">=</button>
+   <button type="button" class="btn-clear btn-grey" onclick="forClear()">C</button>
+  </div>
+ </section>
+ <script src="script.js"></script>
+</body>
+</html>

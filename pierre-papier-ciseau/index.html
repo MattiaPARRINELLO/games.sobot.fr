@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-P-S</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e391ce7786.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <link
+      rel="shortcut icon"
+      href="../../Logos/logo_small_icon_only.png"
+      type="icon/png"
+    />
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <h2 id="infoText">Take your chance</h2>
+    <div class="container">
+        <div class="section">
+            <div class="info">
+                <h3 id="userInfo">You :</h3><span id="userScore">0</span>
+            </div>
+            <div class="show">
+                <em class="fas" id="userChoice">⏱️</em>
+            </div>
+        </div>
+        <div class="section">
+            <div class="info">
+                <h3 id="computerInfo">Computer :</h3><span id="computerScore">0</span>
+            </div>
+            <div class="show">
+                <em class="fas" id="computerChoice">⏱️</em>
+            </div>
+        </div>
+    </div>
+    <h2 style="color: rgb(233, 33, 19);" id="infoText2">Choose one!</h2>
+    <div class="selection">
+        <button class="fas" id="rock" onclick="button(this.id)">🪨</button>
+        <button class="fas" id="paper" onclick="button(this.id)">📜</button>
+        <button class="fas" id="scissors" onclick="button(this.id)">✂️</button>
+    </div>
+</body>
+</html>
