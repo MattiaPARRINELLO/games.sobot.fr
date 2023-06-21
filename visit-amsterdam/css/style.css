@@ -1,0 +1,693 @@
+/* 
+IIIIIIIIIINNNNNNNN        NNNNNNNNIIIIIIIIIITTTTTTTTTTTTTTTTTTTTTTT
+I::::::::IN:::::::N       N::::::NI::::::::IT:::::::::::::::::::::T
+I::::::::IN::::::::N      N::::::NI::::::::IT:::::::::::::::::::::T
+II::::::IIN:::::::::N     N::::::NII::::::IIT:::::TT:::::::TT:::::T
+  I::::I  N::::::::::N    N::::::N  I::::I  TTTTTT  T:::::T  TTTTTT
+  I::::I  N:::::::::::N   N::::::N  I::::I          T:::::T        
+  I::::I  N:::::::N::::N  N::::::N  I::::I          T:::::T        
+  I::::I  N::::::N N::::N N::::::N  I::::I          T:::::T        
+  I::::I  N::::::N  N::::N:::::::N  I::::I          T:::::T        
+  I::::I  N::::::N   N:::::::::::N  I::::I          T:::::T        
+  I::::I  N::::::N    N::::::::::N  I::::I          T:::::T        
+  I::::I  N::::::N     N:::::::::N  I::::I          T:::::T        
+II::::::IIN::::::N      N::::::::NII::::::II      TT:::::::TT      
+I::::::::IN::::::N       N:::::::NI::::::::I      T:::::::::T      
+I::::::::IN::::::N        N::::::NI::::::::I      T:::::::::T      
+IIIIIIIIIINNNNNNNN         NNNNNNNIIIIIIIIII      TTTTTTTTTTT       
+*/
+
+@font-face {
+  font-family: "Catchy Mager";
+  src: url("../asset/font/CatchyMager-Normal.eot");
+  src: url("../asset/font/CatchyMager-Normal.eot?#iefix")
+      format("embedded-opentype"),
+    url("../asset/font/CatchyMager-Normal.woff2") format("woff2"),
+    url("../asset/font/CatchyMager-Normal.woff") format("woff"),
+    url("../asset/font/CatchyMager-Normal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url("https://fonts.cdnfonts.com/css/coco-gothic");
+
+:root {
+  --black: #000000;
+  --darkBrown: #623e2a;
+  --lightBrown: #91713c;
+  --lighterBrown: #efebe5;
+  --lightWhite: #f4f1ed;
+  --white: #ffffff;
+
+  --titleFont: "Catchy Mager", sans-serif;
+  --bodyFont: "Coco Gothic", sans-serif;
+}
+
+/* Path: css\style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.focus-in {
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.slide-in-ndelay {
+  animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.slide-in-1delay {
+  animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+}
+.slide-in-2delay {
+  animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+}
+.scale-up {
+  animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+/* 
+ /$$        /$$$$$$  /$$   /$$ /$$$$$$$  /$$$$$$ /$$   /$$  /$$$$$$       
+| $$       /$$__  $$| $$$ | $$| $$__  $$|_  $$_/| $$$ | $$ /$$__  $$      
+| $$      | $$  \ $$| $$$$| $$| $$  \ $$  | $$  | $$$$| $$| $$  \__/      
+| $$      | $$$$$$$$| $$ $$ $$| $$  | $$  | $$  | $$ $$ $$| $$ /$$$$      
+| $$      | $$__  $$| $$  $$$$| $$  | $$  | $$  | $$  $$$$| $$|_  $$      
+| $$      | $$  | $$| $$\  $$$| $$  | $$  | $$  | $$\  $$$| $$  \ $$      
+| $$$$$$$$| $$  | $$| $$ \  $$| $$$$$$$/ /$$$$$$| $$ \  $$|  $$$$$$/      
+|________/|__/  |__/|__/  \__/|_______/ |______/|__/  \__/ \______/       
+ /$$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$$                                  
+| $$__  $$ /$$__  $$ /$$__  $$| $$_____/                                  
+| $$  \ $$| $$  \ $$| $$  \__/| $$                                        
+| $$$$$$$/| $$$$$$$$| $$ /$$$$| $$$$$                                     
+| $$____/ | $$__  $$| $$|_  $$| $$__/                                     
+| $$      | $$  | $$| $$  \ $$| $$                                        
+| $$      | $$  | $$|  $$$$$$/| $$$$$$$$                                  
+|__/      |__/  |__/ \______/ |________/     
+*/
+.landing-page {
+  background-image: url("../asset/img/homepage.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.filter {
+  background-color: rgba(98, 62, 42, 0.45);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.landing-page .filter .grid {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.landing-page .filter h2 {
+  font-family: var(--bodyFont);
+  text-transform: uppercase;
+  letter-spacing: 0.481vw;
+  color: var(--white);
+  /* convert font size of 1.1875rem to vw */
+
+  font-size: 1.0875vw;
+  font-weight: 700;
+  margin-bottom: 1.5vh;
+  animation: traking-in-contract 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.landing-page .filter h1 {
+  font-family: var(--titleFont);
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 7.675vw;
+  font-weight: 200;
+  animation: traking-in-contract 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.landing-page .filter h3 {
+  font-family: var(--titleFont);
+  text-transform: capitalize;
+  color: var(--white);
+  font-size: 2.4vw;
+  font-weight: 200;
+  margin-top: 20px;
+  animation: traking-in-contract 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.landing-page .filter .icon {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 60px;
+
+  color: var(--white);
+  animation: upAndDown 3s ease-in-out infinite;
+}
+/* 
+ /$$$$$$$  /$$$$$$$  /$$$$$$$$  /$$$$$$  /$$$$$$$$ /$$   /$$        
+| $$__  $$| $$__  $$| $$_____/ /$$__  $$| $$_____/| $$$ | $$        
+| $$  \ $$| $$  \ $$| $$      | $$  \__/| $$      | $$$$| $$        
+| $$$$$$$/| $$$$$$$/| $$$$$   |  $$$$$$ | $$$$$   | $$ $$ $$ /$$$$$$
+| $$____/ | $$__  $$| $$__/    \____  $$| $$__/   | $$  $$$$|______/
+| $$      | $$  \ $$| $$       /$$  \ $$| $$      | $$\  $$$        
+| $$      | $$  | $$| $$$$$$$$|  $$$$$$/| $$$$$$$$| $$ \  $$        
+|__/      |__/  |__/|________/ \______/ |________/|__/  \__/        
+ /$$$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$   /$$          
+|__  $$__/ /$$__  $$|__  $$__/|_  $$_/ /$$__  $$| $$$ | $$          
+   | $$   | $$  \ $$   | $$     | $$  | $$  \ $$| $$$$| $$          
+   | $$   | $$$$$$$$   | $$     | $$  | $$  | $$| $$ $$ $$          
+   | $$   | $$__  $$   | $$     | $$  | $$  | $$| $$  $$$$          
+   | $$   | $$  | $$   | $$     | $$  | $$  | $$| $$\  $$$          
+   | $$   | $$  | $$   | $$    /$$$$$$|  $$$$$$/| $$ \  $$          
+   |__/   |__/  |__/   |__/   |______/ \______/ |__/  \__/ 
+*/
+
+.presentation {
+  background-color: var(--lightWhite);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 90vh;
+}
+.presentation .text {
+  color: var(--darkBrown);
+  padding: 0rem 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.presentation .text h1 {
+  font-family: var(--titleFont);
+  font-size: 3.6vw;
+  font-weight: 550;
+  margin-bottom: 0.5vw;
+  top: 0;
+}
+.presentation .text p {
+  font-family: var(--bodyFont);
+  font-size: 1.2vw;
+  font-weight: 300;
+  margin-bottom: 1.5vw;
+  padding-top: 3vw;
+  line-height: 1.9vw;
+}
+.presentation img {
+  width: 60%;
+}
+.presentation .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+ /$$   /$$  /$$$$$$  /$$$$$$$$ /$$$$$$$$ /$$      
+| $$  | $$ /$$__  $$|__  $$__/| $$_____/| $$      
+| $$  | $$| $$  \ $$   | $$   | $$      | $$      
+| $$$$$$$$| $$  | $$   | $$   | $$$$$   | $$      
+| $$__  $$| $$  | $$   | $$   | $$__/   | $$      
+| $$  | $$| $$  | $$   | $$   | $$      | $$      
+| $$  | $$|  $$$$$$/   | $$   | $$$$$$$$| $$$$$$$$
+|__/  |__/ \______/    |__/   |________/|________/
+ */
+.hotels {
+  background-color: var(--lighterBrown);
+  display: flex;
+  flex-direction: column;
+}
+.hotels .title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5vh 0;
+  color: var(--darkBrown);
+}
+.hotels .title-container h1 {
+  font-family: var(--titleFont);
+  font-size: 3.6vw;
+  font-weight: 550;
+  margin-bottom: 0.5vw;
+  top: 0;
+}
+.hotels .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 9vw;
+  gap: 20px;
+}
+.hotels .grid .hotel {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  padding-bottom: 50px;
+}
+
+.hotels .grid .hotel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hotels .grid .hotel .text-container {
+  border: 1px solid var(--darkBrown);
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.2vw;
+  position: relative;
+  justify-content: center;
+}
+.hotels .grid .hotel .text-container h1 {
+  font-family: var(--bodyFont);
+  color: var(--darkBrown);
+  font-size: 1.5vw;
+  font-weight: 400;
+  margin-bottom: 0.5vw;
+  top: 50px;
+}
+.hotels .grid .hotel .text-container p {
+  font-family: var(--bodyFont);
+  color: var(--darkBrown);
+  font-size: 1vw;
+  font-weight: 300;
+  margin-top: 1vw;
+}
+
+/* 
+ /$$$$$$ /$$   /$$  /$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$$$ /$$$$$$  /$$   /$$ /$$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$  /$$       /$$$$$$$$
+|_  $$_/| $$$ | $$ /$$__  $$ /$$__  $$| $$$ | $$|__  $$__//$$__  $$| $$  | $$| $$__  $$| $$$ | $$ /$$__  $$| $$__  $$| $$      | $$_____/
+  | $$  | $$$$| $$| $$  \__/| $$  \ $$| $$$$| $$   | $$  | $$  \ $$| $$  | $$| $$  \ $$| $$$$| $$| $$  \ $$| $$  \ $$| $$      | $$      
+  | $$  | $$ $$ $$| $$      | $$  | $$| $$ $$ $$   | $$  | $$  | $$| $$  | $$| $$$$$$$/| $$ $$ $$| $$$$$$$$| $$$$$$$ | $$      | $$$$$   
+  | $$  | $$  $$$$| $$      | $$  | $$| $$  $$$$   | $$  | $$  | $$| $$  | $$| $$__  $$| $$  $$$$| $$__  $$| $$__  $$| $$      | $$__/   
+  | $$  | $$\  $$$| $$    $$| $$  | $$| $$\  $$$   | $$  | $$  | $$| $$  | $$| $$  \ $$| $$\  $$$| $$  | $$| $$  \ $$| $$      | $$      
+ /$$$$$$| $$ \  $$|  $$$$$$/|  $$$$$$/| $$ \  $$   | $$  |  $$$$$$/|  $$$$$$/| $$  | $$| $$ \  $$| $$  | $$| $$$$$$$/| $$$$$$$$| $$$$$$$$
+|______/|__/  \__/ \______/  \______/ |__/  \__/   |__/   \______/  \______/ |__/  |__/|__/  \__/|__/  |__/|_______/ |________/|________/
+ */
+
+.les-incontournables {
+  background-color: var(--lighterBrown);
+  display: flex;
+  flex-direction: column;
+}
+
+.les-incontournables .title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5vh 0;
+  color: var(--darkBrown);
+}
+
+.les-incontournables .title-container h1 {
+  font-family: var(--titleFont);
+  font-size: 3.6vw;
+  font-weight: 550;
+  margin-bottom: 0.5vw;
+  top: 0;
+}
+
+.les-incontournables .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 9vw;
+  gap: 20px;
+}
+
+.les-incontournables .grid .incontournable {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  padding-bottom: 50px;
+}
+
+.les-incontournables .grid .incontournable img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.les-incontournables .grid .incontournable .text-container {
+  border: 1px solid var(--darkBrown);
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.2vw;
+  position: relative;
+  justify-content: center;
+}
+
+.les-incontournables .grid .incontournable .text-container h1 {
+  font-family: var(--bodyFont);
+  color: var(--darkBrown);
+  font-size: 1.5vw;
+  font-weight: 400;
+  margin-bottom: 0.5vw;
+  top: 50px;
+}
+
+.les-incontournables .grid .incontournable .text-container p {
+  font-family: var(--bodyFont);
+  color: var(--darkBrown);
+  font-size: 1vw;
+  font-weight: 300;
+  margin-top: 1vw;
+}
+
+/* 
+ /$$$$$$$  /$$$$$$$  /$$$$$$$$  /$$$$$$   /$$$$$$  /$$$$$$$$
+| $$__  $$| $$__  $$| $$_____/ /$$__  $$ /$$__  $$| $$_____/
+| $$  \ $$| $$  \ $$| $$      | $$  \__/| $$  \__/| $$      
+| $$$$$$$/| $$$$$$$/| $$$$$   |  $$$$$$ |  $$$$$$ | $$$$$   
+| $$____/ | $$__  $$| $$__/    \____  $$ \____  $$| $$__/   
+| $$      | $$  \ $$| $$       /$$  \ $$ /$$  \ $$| $$      
+| $$      | $$  | $$| $$$$$$$$|  $$$$$$/|  $$$$$$/| $$$$$$$$
+|__/      |__/  |__/|________/ \______/  \______/ |________/
+*/
+.presse {
+  background-image: url("../asset/img/presse.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.presse .title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8vh 0;
+  color: var(--white);
+}
+.presse .title-container h1 {
+  font-family: var(--titleFont);
+  font-size: 6.5vw;
+  font-weight: 550;
+  margin-bottom: 0.5vw;
+  top: 0;
+}
+.presse .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 9vw;
+  gap: 20px;
+}
+
+.presse .grid .avis .txt {
+  font-family: var(--bodyFont);
+  color: var(--lightWhite);
+  font-size: 1.5vw;
+  font-weight: 200;
+  margin-top: 1vw;
+}
+.presse .grid .avis .author-credit {
+  font-family: var(--bodyFont);
+  color: var(--lightWhite);
+  font-size: 1.5vw;
+  font-weight: 800;
+  margin-top: 1vw;
+}
+
+/* 
+  /$$$$$$  /$$   /$$ /$$$$$$ /$$      /$$  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$   /$$  /$$$$$$ 
+ /$$__  $$| $$$ | $$|_  $$_/| $$$    /$$$ /$$__  $$|__  $$__/|_  $$_/ /$$__  $$| $$$ | $$ /$$__  $$
+| $$  \ $$| $$$$| $$  | $$  | $$$$  /$$$$| $$  \ $$   | $$     | $$  | $$  \ $$| $$$$| $$| $$  \__/
+| $$$$$$$$| $$ $$ $$  | $$  | $$ $$/$$ $$| $$$$$$$$   | $$     | $$  | $$  | $$| $$ $$ $$|  $$$$$$ 
+| $$__  $$| $$  $$$$  | $$  | $$  $$$| $$| $$__  $$   | $$     | $$  | $$  | $$| $$  $$$$ \____  $$
+| $$  | $$| $$\  $$$  | $$  | $$\  $ | $$| $$  | $$   | $$     | $$  | $$  | $$| $$\  $$$ /$$  \ $$
+| $$  | $$| $$ \  $$ /$$$$$$| $$ \/  | $$| $$  | $$   | $$    /$$$$$$|  $$$$$$/| $$ \  $$|  $$$$$$/
+|__/  |__/|__/  \__/|______/|__/     |__/|__/  |__/   |__/   |______/ \______/ |__/  \__/ \______/ */
+@keyframes upAndDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes traking-in-contract {
+  0% {
+    letter-spacing: 0.9em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+    overflow: hidden;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    overflow: auto;
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* 
+ /$$      /$$ /$$$$$$$$ /$$$$$$$  /$$$$$$  /$$$$$$ 
+| $$$    /$$$| $$_____/| $$__  $$|_  $$_/ /$$__  $$
+| $$$$  /$$$$| $$      | $$  \ $$  | $$  | $$  \ $$
+| $$ $$/$$ $$| $$$$$   | $$  | $$  | $$  | $$$$$$$$
+| $$  $$$| $$| $$__/   | $$  | $$  | $$  | $$__  $$
+| $$\  $ | $$| $$      | $$  | $$  | $$  | $$  | $$
+| $$ \/  | $$| $$$$$$$$| $$$$$$$/ /$$$$$$| $$  | $$
+|__/     |__/|________/|_______/ |______/|__/  |__/ */
+
+/* 
+   /$$    /$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$$  /$$   /$$
+ /$$$$   /$$$_  $$ /$$__  $$| $$  | $$| $$__  $$| $$  / $$
+|_  $$  | $$$$\ $$|__/  \ $$| $$  | $$| $$  \ $$|  $$/ $$/
+  | $$  | $$ $$ $$  /$$$$$$/| $$$$$$$$| $$$$$$$/ \  $$$$/ 
+  | $$  | $$\ $$$$ /$$____/ |_____  $$| $$____/   >$$  $$ 
+  | $$  | $$ \ $$$| $$            | $$| $$       /$$/\  $$
+ /$$$$$$|  $$$$$$/| $$$$$$$$      | $$| $$      | $$  \ $$
+|______/ \______/ |________/      |__/|__/      |__/  |__/ */
+@media (max-width: 1024px) {
+  .landing-page .filter h2 {
+    letter-spacing: 0.3vw;
+    font-size: 1.6vw;
+    margin-bottom: 0;
+  }
+  .landing-page .filter h1 {
+    font-size: 12vw;
+    font-weight: 200;
+  }
+  .landing-page .filter h3 {
+    font-size: 5vw;
+  }
+  .landing-page .filter .icon {
+    font-size: 5vw;
+  }
+}
+/* 
+ /$$$$$$$$ /$$$$$$   /$$$$$$  /$$$$$$$  /$$   /$$
+|_____ $$//$$__  $$ /$$__  $$| $$__  $$| $$  / $$
+     /$$/| $$  \__/| $$  \ $$| $$  \ $$|  $$/ $$/
+    /$$/ | $$$$$$$ |  $$$$$$/| $$$$$$$/ \  $$$$/ 
+   /$$/  | $$__  $$ >$$__  $$| $$____/   >$$  $$ 
+  /$$/   | $$  \ $$| $$  \ $$| $$       /$$/\  $$
+ /$$/    |  $$$$$$/|  $$$$$$/| $$      | $$  \ $$
+|__/      \______/  \______/ |__/      |__/  |__/ */
+@media (max-width: 768px) {
+  .landing-page .filter h2 {
+    letter-spacing: 0.3vw;
+    font-size: 3vw;
+    margin-bottom: 0;
+  }
+  .landing-page .filter h1 {
+    font-size: 12vw;
+    font-weight: 200;
+  }
+  .landing-page .filter h3 {
+    font-size: 6vw;
+  }
+  .landing-page .filter .icon {
+    display: none;
+  }
+  .landing-page {
+    height: 90vh;
+  }
+
+  .presentation {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: none;
+    height: auto;
+  }
+  .presentation .text {
+    padding-left: 6vw;
+  }
+  .presentation .text h1 {
+    font-size: 8vw;
+  }
+  .presentation .text p {
+    font-size: 4vw;
+    line-height: 5.5vw;
+  }
+  .presentation img {
+    width: 70%;
+  }
+
+  .hotels {
+    max-height: auto;
+  }
+  .hotels .title-container {
+    padding: 5vh 0;
+  }
+  .hotels .title-container h1 {
+    font-size: 10vw;
+  }
+  .hotels .grid {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+  }
+  .hotels .grid .hotel .text-container h1 {
+    font-size: 5vw;
+  }
+  .hotels .grid .hotel .text-container p {
+    font-size: 3vw;
+    margin-top: auto;
+  }
+
+  .les-incontournables .title-container h1 {
+    font-size: 10vw;
+  }
+
+  .les-incontournables .grid {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+  }
+
+  .les-incontournables .grid .incontournable .text-container h1 {
+    font-size: 5vw;
+  }
+
+  .les-incontournables .grid .incontournable .text-container p {
+    font-size: 3vw;
+  }
+  .presse {
+    height: auto;
+  }
+  .presse .title-container {
+    padding: 4vh 0;
+  }
+  .presse .title-container h1 {
+    font-size: 6.5vw;
+  }
+  .presse .grid {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+    padding: 0 30vw;
+    padding-bottom: 50px;
+  }
+
+  .presse .grid .avis .txt {
+    font-size: 2vw;
+  }
+  .presse .grid .avis .author-credit {
+    font-size: 2vw;
+  }
+}
+/* 
+ /$$   /$$  /$$$$$$  /$$$$$$$  /$$$$$$$  /$$   /$$
+| $$  | $$ /$$__  $$| $$____/ | $$__  $$| $$  / $$
+| $$  | $$|__/  \ $$| $$      | $$  \ $$|  $$/ $$/
+| $$$$$$$$  /$$$$$$/| $$$$$$$ | $$$$$$$/ \  $$$$/ 
+|_____  $$ /$$____/ |_____  $$| $$____/   >$$  $$ 
+      | $$| $$       /$$  \ $$| $$       /$$/\  $$
+      | $$| $$$$$$$$|  $$$$$$/| $$      | $$  \ $$
+      |__/|________/ \______/ |__/      |__/  |__/ */
+@media (max-width: 425px) {
+  .landing-page .filter h2 {
+    margin-top: 60px;
+    font-size: 3.3vw;
+  }
+  .landing-page .filter h1 {
+    font-size: 15vw;
+  }
+  .landing-page .filter h3 {
+    font-size: 8vw;
+    margin-bottom: 50px;
+  }
+  .landing-page {
+    height: 70vh;
+  }
+
+  .presentation .text {
+    padding-left: 5vw;
+  }
+  .presentation .text h1 {
+    font-size: 8vw;
+  }
+  .presentation .text p {
+    font-size: 5vw;
+  }
+  .presentation img {
+    width: 100%;
+  }
+
+  .hotels .grid .hotel .text-container p {
+    font-size: 4vw;
+  }
+
+  .les-incontournables .title-container h1 {
+    font-size: 10vw;
+  }
+
+  .les-incontournables .grid .incontournable .text-container p {
+    font-size: 4vw;
+  }
+  .presse .title-container h1 {
+    font-size: 10vw;
+  }
+  .presse .grid {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+    padding: 0 15vw;
+    padding-bottom: 50px;
+  }
+
+  .presse .grid .avis .txt {
+    font-size: 4vw;
+  }
+  .presse .grid .avis .author-credit {
+    font-size: 4vw;
+  }
+}
