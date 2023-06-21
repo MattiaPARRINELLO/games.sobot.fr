@@ -38,9 +38,14 @@ elements.forEach((element) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.intersectionRatio > animationConfig.treshold) {
-            entry.target.classList.remove(animationConfig.animateClass);
-            entry.target.classList.add(animationConfig.animateClass);
-            observer.unobserve(entry.target);
+            // if on smartphone do not animate
+            if (window.innerWidth < 768) {
+              return;
+            } else {
+              entry.target.classList.remove(animationConfig.animateClass);
+              entry.target.classList.add(animationConfig.animateClass);
+              observer.unobserve(entry.target);
+            }
           }
         });
       },
